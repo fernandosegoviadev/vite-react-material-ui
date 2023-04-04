@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { Container } from "@mui/material";
+import Searcher from "./components/Searcher";
+import { useState, useEffect } from "react";
+import { getGitHubUser } from "./services/users";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [inputUser, setInputUser] = useState("octocat");
+  const [userState, setUserState] = useState("inputUser");
 
+  const gettingUser = async (user) => {
+    const userResponse = await getGitHubUser(user);
+    console.log(userResponse);
+  }
+  useEffect(()=>{
+    gettingUser(inputUser);
+  },[])
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <Container
+      sx={{
+        background: "whitesmoke",
+        width: "80vw",
+        height: "500px",
+        borderRadius: "15px",
+        marginTop: "40px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <Searcher inputUser={inputUser} setInputUser={setInputUser} />
+    </Container>
+  );
 }
 
-export default App
+export default App;
