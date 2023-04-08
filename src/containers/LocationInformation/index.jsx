@@ -10,15 +10,22 @@ const LocationInformation = (props) => {
   const { location, twitter_username, blog, company } = userState;
   return (
     <Fragment>
-      <Grid container>
+      <Grid
+        container
+        spacing={2}
+        sx={{
+          marginTop: "15px",
+          backgroundColor: "blue",
+        }}
+      >
         <Grid item xs={6}>
-          <Stack>
+          <Stack direction="row" spacing={2}>
             <LocationOnIcon />
             {location && <Typography>{location}</Typography>}
           </Stack>
         </Grid>
         <Grid item xs={6}>
-          <Stack>
+          <Stack direction="row" spacing={2}>
             <TwitterIcon />
 
             {twitter_username === null ? (
@@ -29,12 +36,14 @@ const LocationInformation = (props) => {
           </Stack>
         </Grid>
         <Grid item xs={6}>
-          <Stack>
+          <Stack direction="row" spacing={2}>
             <LanguageIcon />
             {blog === null ? (
               <Typography>{"Not Available"}</Typography>
             ) : (
-              <Typography>{blog}</Typography>
+              <a target="_blank" href={blog}>
+                <Typography>{blog}</Typography>
+              </a>
             )}
           </Stack>
         </Grid>
