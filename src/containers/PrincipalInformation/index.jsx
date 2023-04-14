@@ -15,7 +15,7 @@ const PrincipalInformation = (props) => {
             <Typography
             variant="h4">{name}</Typography>
             <Typography
-            variant="subtitle2">{created_at}</Typography>
+            variant="subtitle2">{created_at && created_at.slice(0,10)}</Typography>
         </Stack>
             <Typography
             vatiant="caption">@{login}</Typography>

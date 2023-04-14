@@ -15,7 +15,6 @@ const LocationInformation = (props) => {
         spacing={2}
         sx={{
           marginTop: "15px",
-          backgroundColor: "blue",
         }}
       >
         <Grid item xs={6}>
@@ -48,7 +47,7 @@ const LocationInformation = (props) => {
           </Stack>
         </Grid>
         <Grid item xs={6}>
-          <Stack>
+          <Stack  direction="row" spacing={2}>
             <BusinessIcon />
             {company === null ? (
               <Typography>{"Not Available"}</Typography>

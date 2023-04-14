@@ -8,12 +8,14 @@ const UserCard = (props) => {
   const { avatar_url } = userState;
 
   return (
-    <Grid
-      container
-      spacing={2}
+    <Stack
+      direction="row"
       sx={{
-        marginTop: "15px",
-        backgroundColor: "red",
+        marginTop: "30px",
+        width: "100%",
+        display: "flex",
+        justifyContent: "space-evenly",
+        maxHeight: "60%",        
       }}
     >
       <Grid item xs={3}>
@@ -23,20 +25,18 @@ const UserCard = (props) => {
           image={avatar_url}
           sx={{
             borderRadius: "50%",
+            width: "100%",
+            height: "100%"
           }}
         />
       </Grid>
       <Grid item xs={0}>
-        <Stack
-        direction="column"
-        spacing={1}
-        sx={{maging:'30px'}}
-        >
+        <Stack direction="column" spacing={1} sx={{ maging: "30px" }}>
           <PrincipalInformation userState={userState} />
           <Description userState={userState} />
         </Stack>
       </Grid>
-    </Grid>
+    </Stack>
   );
 };
 

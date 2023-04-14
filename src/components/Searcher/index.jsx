@@ -22,7 +22,8 @@ const Searcher = (props) => {
       direction="row"
       sx={{
         marginTop: "30px",
-        width: "90%",
+        width: "100%",
+        justifyContent: "center",
       }}
     >
       <TextField
@@ -41,7 +42,7 @@ const Searcher = (props) => {
         onClick={handleSubmit}
         size="small"
         sx={{
-          left: "-45px",
+          //left: "-45px",
         }}
       >
         <SearchIcon />

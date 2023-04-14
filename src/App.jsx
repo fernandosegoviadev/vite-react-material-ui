@@ -43,10 +43,15 @@ function App() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
+        padding: "0px", 
+        margin: "0px",
+        border: "0px"
       }}
     >
       <Searcher inputUser={inputUser} setInputUser={setInputUser} />
-      <UserCard userState={userState}/>
+      <UserCard userState={userState} />
     </Container>
   );
 }
