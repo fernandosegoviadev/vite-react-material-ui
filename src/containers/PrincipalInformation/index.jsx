@@ -10,15 +10,14 @@ const PrincipalInformation = (props) => {
         <Stack
         direction="row"
         sx={{
-          justifyContent: 'space-between'
+          justifyContent: 'space-between',
+          alignItems: 'center'
         }}>
             <Typography
             variant="h4">{name}</Typography>
             <Typography
-            variant="subtitle2">{created_at && created_at.slice(0,10)}</Typography>
+            variant="h6">{created_at && created_at.slice(0,10)}</Typography>
         </Stack>
-            <Typography
-            vatiant="caption">@{login}</Typography>
     </Fragment>
   )
 };

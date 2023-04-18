@@ -5,48 +5,62 @@ import { useState } from "react";
 
 const Searcher = (props) => {
   const { setInputUser } = props;
-  
-  const [valueInput, setValueInput] = useState('');
-  
+
+  const [valueInput, setValueInput] = useState("");
+
   const onSearchValueChange = (e) => {
     const inputValue = e.target.value;
-    setValueInput(inputValue); 
-  }
-  
-  const handleSubmit = () => {
-    setInputUser(valueInput);    
+    setValueInput(inputValue);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setInputUser(valueInput);
   };
 
   return (
     <Stack
       direction="row"
       sx={{
-        marginTop: "30px",
+        marginBottom: "20px",
         width: "100%",
         justifyContent: "center",
       }}
     >
-      <TextField
-        id="outlined-basic"
-        label="GitHub User"
-        placeholder="Octocat"
-        variant="outlined"
-        size="small"
-        value={valueInput}
-        onChange={onSearchValueChange}
-        sx={{
-          width: "90%",
+      <form
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "space-around",
         }}
-      />
-      <IconButton
-        onClick={handleSubmit}
-        size="small"
-        sx={{
-          //left: "-45px",
-        }}
+        onSubmit={handleSubmit}
       >
-        <SearchIcon />
-      </IconButton>
+        <TextField
+          id="outlined-basic"
+          label="GitHub User"
+          placeholder="Octocat"
+          variant="outlined"
+          size="small"
+          value={valueInput}
+          onChange={onSearchValueChange}
+          sx={{
+            width: "100%",
+          }}
+        ></TextField>
+        <IconButton
+          onClick={handleSubmit}
+          size="small"
+          sx={
+            {
+              left: "-25px",
+              width: "0px",
+              padding: "0px"
+            }
+          }
+        >
+          <SearchIcon />
+        </IconButton>
+      </form>
     </Stack>
   );
 };

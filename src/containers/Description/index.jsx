@@ -5,20 +5,26 @@ import LocationInformation from "../LocationInformation";
 
 const Description = (props) => {
   const { userState } = props;
-  const { bio } = userState;
-  
+  const { bio, login } = userState;
+
   return (
     <Fragment>
       <Stack
-      sx={{
-        justifyContent: 'center'
-      }}>
-        {bio === null ? (
-          <Typography
-          variant="body1">{"The user has not a bio."}</Typography>
+       direction="row"
+       sx={{
+         justifyContent: 'space-around'
+       }}
+      >
+        {login === null ? (
+          <Typography variant="body1">{"The user has not a bio."}</Typography>
         ) : (
-          <Typography
-          variant="body1">{bio}</Typography>
+          <Typography vatiant="caption">GitHub: @{login}</Typography>
+        )}
+
+        {bio === null ? (
+          <Typography variant="body1">{"The user has not a bio."}</Typography>
+        ) : (
+          <Typography variant="body1">Email: {bio}</Typography>
         )}
       </Stack>
       <PaperInformation userState={userState} />
