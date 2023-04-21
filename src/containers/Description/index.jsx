@@ -10,10 +10,10 @@ const Description = (props) => {
   return (
     <Fragment>
       <Stack
-       direction="row"
-       sx={{
-         justifyContent: 'space-around'
-       }}
+          sx={{
+          justifyContent: "space-around",
+          flexDirection: "row",
+        }}
       >
         {login === null ? (
           <Typography variant="body1">{"The user has not a bio."}</Typography>

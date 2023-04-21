@@ -14,11 +14,16 @@ const LocationInformation = (props) => {
         container
         spacing={2}
         sx={{
-          marginTop: "15px",
+          marginTop: "15px",         
+          flexDirection: "row",
+          "@media only screen and (max-width: 900px) and (min-width: 320px)": {
+            flexDirection: "column",
+          },
         }}
       >
         <Grid item xs={6}>
-          <Stack direction="row" spacing={2}>
+          <Stack direction="row"
+          spacing={2}>
             <LocationOnIcon />
             {location && <Typography>{location}</Typography>}
           </Stack>

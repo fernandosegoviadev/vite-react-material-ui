@@ -9,30 +9,54 @@ const PaperInformation = (props) => {
     <Fragment>
       <Paper elevation={3}>
         <Stack
-        spacing={3}
-        direction="row"
-        sx={{
-          justifyContent: 'space-evenly',
-          margin: '20px'
-        }}
+          spacing={3}
+          direction="row"
+          sx={{
+            justifyContent: "space-evenly",
+            margin: "20px",
+          }}
         >
           <Stack>
             <Typography
-            variant="h5">Repos</Typography>
-            <Typography
-            variant="h6">{public_repos}</Typography>
+              variant="h5"
+              sx={{
+                "@media only screen and (max-width: 900px) and (min-width: 320px)":
+                  {
+                    fontSize: "20px",
+                  },
+              }}
+            >
+              Repos
+            </Typography>
+            <Typography variant="h6">{public_repos}</Typography>
           </Stack>
           <Stack>
             <Typography
-            variant="h5">Followers</Typography>
-            <Typography
-            variant="h6">{followers}</Typography>
+              variant="h5"
+              sx={{
+                "@media only screen and (max-width: 900px) and (min-width: 320px)":
+                  {
+                    fontSize: "20px",
+                  },
+              }}
+            >
+              Followers
+            </Typography>
+            <Typography variant="h6">{followers}</Typography>
           </Stack>
           <Stack>
             <Typography
-            variant="h5">Following</Typography>
-            <Typography
-            variant="h6">{following}</Typography>
+              variant="h5"
+              sx={{
+                "@media only screen and (max-width: 900px) and (min-width: 320px)":
+                  {
+                    fontSize: "20px",
+                  },
+              }}
+            >
+              Following
+            </Typography>
+            <Typography variant="h6">{following}</Typography>
           </Stack>
         </Stack>
       </Paper>

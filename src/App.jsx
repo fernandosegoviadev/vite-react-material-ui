@@ -47,7 +47,13 @@ function App() {
         textAlign: "center",
         padding: "0px", 
         margin: "0px",
-        border: "0px"
+        border: "0px",
+        '@media only screen and (max-width: 900px) and (min-width: 320px)': {
+          width: '90vw',
+          minHeight: '90vh',
+          justifyContent: 'flex-start',
+          padding: '8% 5%',  
+        },
       }}
     >
       <Searcher inputUser={inputUser} setInputUser={setInputUser} />
