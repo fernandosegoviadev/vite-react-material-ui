@@ -14,18 +14,30 @@ const LocationInformation = (props) => {
         container
         spacing={2}
         sx={{
-          marginTop: "15px",         
+          marginTop: "15px",
           flexDirection: "row",
           "@media only screen and (max-width: 900px) and (min-width: 320px)": {
             flexDirection: "column",
+            width: "100%",
           },
         }}
       >
         <Grid item xs={6}>
-          <Stack direction="row"
-          spacing={2}>
+          <Stack direction="row" spacing={2}>
             <LocationOnIcon />
-            {location && <Typography>{location}</Typography>}
+            {location && (
+              <Typography
+                sx={{
+                  "@media only screen and (max-width: 900px) and (min-width: 320px)":
+                    {
+                      whiteSpace: "nowrap",
+                      textOverflow: "ellipsis",
+                    },
+                }}
+              >
+                {location}
+              </Typography>
+            )}
           </Stack>
         </Grid>
         <Grid item xs={6}>
@@ -35,7 +47,9 @@ const LocationInformation = (props) => {
             {twitter_username === null ? (
               <Typography>{"Not Available"}</Typography>
             ) : (
-              <Typography>@{twitter_username}</Typography>
+              <a target="_blank" href={`https://twitter.com/${twitter_username}`}>
+                <Typography>@{twitter_username}</Typography>
+              </a>
             )}
           </Stack>
         </Grid>
@@ -46,13 +60,13 @@ const LocationInformation = (props) => {
               <Typography>{"Not Available"}</Typography>
             ) : (
               <a target="_blank" href={blog}>
-                <Typography>{blog}</Typography>
+                <Typography>Blog/portfolio</Typography>
               </a>
             )}
           </Stack>
         </Grid>
         <Grid item xs={6}>
-          <Stack  direction="row" spacing={2}>
+          <Stack direction="row" spacing={2}>
             <BusinessIcon />
             {company === null ? (
               <Typography>{"Not Available"}</Typography>

@@ -14,21 +14,23 @@ const UserCard = (props) => {
         width: "100%",
         display: "flex",
         justifyContent: "space-evenly",
-        maxHeight: "60%", 
-        flexDirection: 'row',   
-        '@media only screen and (max-width: 900px) and (min-width: 320px)': {
-          flexDirection: 'column',
-          paddingTop: '15%'  
-        },    
+        maxHeight: "60%",
+        flexDirection: "row",
+        "@media only screen and (max-width: 900px) and (min-width: 320px)": {
+          flexDirection: "column",
+          paddingTop: "15%",
+        },
       }}
     >
-      <Grid item 
-      sx={{
-        display: "flex",
-        alignItems:"center",
-        justifyContent: 'center'
-      }}
-      xs={3}>
+      <Grid
+        item
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+        xs={3}
+      >
         <CardMedia
           component="img"
           alt="GitHub User"
@@ -38,7 +40,11 @@ const UserCard = (props) => {
             width: "90%",
             height: "80%",
             maxWidth: "90%",
-            maxHeight: "80%"
+            maxHeight: "80%",
+            "@media only screen and (max-width: 900px) and (min-width: 320px)":
+              {
+                width: "50%",
+              },
           }}
         />
       </Grid>

@@ -14,7 +14,17 @@ const PrincipalInformation = (props) => {
           alignItems: 'center'
         }}>
             <Typography
-            variant="h4">{name}</Typography>
+            variant="h4"
+            sx={{              
+              '@media only screen and (max-width: 900px) and (min-width: 320px)': {
+                whiteSpace:'nowrap',
+                textOverflow: 'ellipsis',
+                overflow: 'hidden',
+                fontSize: "20px",
+                fontWeight: "600"
+              },
+            }}
+            >{name}</Typography>
             <Typography
             variant="h6">{created_at && created_at.slice(0,10)}</Typography>
         </Stack>

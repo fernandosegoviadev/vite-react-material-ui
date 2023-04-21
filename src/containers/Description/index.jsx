@@ -10,7 +10,7 @@ const Description = (props) => {
   return (
     <Fragment>
       <Stack
-          sx={{
+        sx={{
           justifyContent: "space-around",
           flexDirection: "row",
         }}
@@ -18,13 +18,42 @@ const Description = (props) => {
         {login === null ? (
           <Typography variant="body1">{"The user has not a bio."}</Typography>
         ) : (
-          <Typography vatiant="caption">GitHub: @{login}</Typography>
+          <a target="_blank" href={`https://github.com/${login}`}>
+            <Typography
+              vatiant="caption"
+              sx={{
+                "@media only screen and (max-width: 900px) and (min-width: 320px)":
+                  {
+                    whiteSpace: "nowrap",
+                    textOverflow: "ellipsis",
+                    overflow: "hidden",
+                  },
+              }}
+            >
+              GitHub: <br />@{login}
+            </Typography>
+          </a>
         )}
 
         {bio === null ? (
           <Typography variant="body1">{"The user has not a bio."}</Typography>
         ) : (
-          <Typography variant="body1">Email: {bio}</Typography>
+          <a href={`mailto:${bio}`}>
+            <Typography
+              variant="body1"
+              sx={{
+                "@media only screen and (max-width: 900px) and (min-width: 320px)":
+                  {
+                    whiteSpace: "nowrap",
+                    textOverflow: "ellipsis",
+                    overflow: "hidden",
+                  },
+              }}
+            >
+              Email: <br />
+              {bio}
+            </Typography>
+          </a>
         )}
       </Stack>
       <PaperInformation userState={userState} />
