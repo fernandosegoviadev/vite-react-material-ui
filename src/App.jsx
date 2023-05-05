@@ -1,7 +1,7 @@
 import "./App.css";
 import { Container } from "@mui/material";
 import Searcher from "./components/Searcher";
-import UserCard from "./containers/userCard";
+import UserCard from "./containers/UserCard";
 
 import { useState, useEffect } from "react";
 import { getGitHubUser } from "./services/users";
